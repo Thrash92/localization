@@ -1,1 +1,32 @@
+<h1>Localization</h1>
+<h2>Listing projects</h2>
+<%=link_to 'new project', new_project_path%>
+<table border="1px">
+  <tr>
+    <th>Project Id</th>
+    <th>Project Name</th>
+    <th>Default language</th>
+    <th>Show Project</th>
+    <th> Edit Project</th>
+    <th> Destroy Project</th>
+  </tr>
 
+  <%- @projects.each do |project| %>
+    <tr>
+      <td> <%= project.id %> </td>
+      <td> <%= project.name %> </td>
+      <td> <%= project.default_language_id %> </td>
+      <td><%= link_to 'Show', project_path(project) %></td>
+      <td><%= link_to 'Edit', edit_project_path(project) %></td>
+      <td><%= link_to 'Destroy', project_path(project),         method: :delete,
+               data: { confirm: 'Are you sure?' } %></td>
+      <td>
+        <ol>
+        <%- project.languages.each do |l| %>
+          <li><%= link_to l.name, project_words_path(project, language_id: l.id) %></li>
+        <% end %>
+     </td>
+    </tr>
+  <% end %>
+</table>
+<%= link_to 'Sign out', destroy_user_session_path, :method => :delete %>

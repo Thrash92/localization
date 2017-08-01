@@ -1,0 +1,31 @@
+<%=link_to 'new project', new_project_path%>
+
+<table border="1px">
+<tr>
+  <th>Word Key</th>
+  <th>Defaul Language</th>
+  <th>Translation</th>
+  <th>Save</th>
+</tr>
+<% - i = 0 %>
+<%- @words.walk_tree do |word,l|%>
+  <% - i=i+1 %>
+  <%= form_for :word, url: project_words_path(@project.id), remote: true do |f| %>
+    <%= f.hidden_field 'word_id', value: word.id %>
+    <%= f.hidden_field :language_id, value: params[:language_id] %>
+    <tr>
+
+      <td><%= (' &nbsp; &nbsp; ' * l.to_i).html_safe %><%= word.word %></td>
+
+    </tr>
+
+
+  <% end %>
+<% end %>
+</table>
+ <%= link_to 'back', projects_path %>
+ <p>
+   Download:
+   <%= link_to "Yaml", project_words_path(format: "yaml") %>
+   <%= link_to "Excel", project_words_path(format: "xls") %>
+ </p>
