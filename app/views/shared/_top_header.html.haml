@@ -1,64 +1,32 @@
--# %nav.navbar.navbar-light.bg-faded
--#   %a.navbar-brand= "Grabbers"
--#   %ul.nav.navbar-nav
--#     %li.nav-item.active
--#       %a.nav-link{ href: "/" }= "Home"
--#     %li.nav-item.dropdown
--#       %a.nav-link.dropdown-toggle{"data-toggle" => "dropdown", role: "button", "aria-haspopup" => "true", "aria-expanded" => "false" }= 'Ulmart'
--#       .dropdown-menu{ "aria-labelledby" => "Preview" }
--#         %a.dropdown-item{ href: ulmart_categories_path }= 'Категории'
--#         %a.dropdown-item{ href: ulmart_goods_path }= 'Продукты'
--#         %a.dropdown-item{ href: ulmart_proxies_path }= 'Прокси'
--#         %a.dropdown-item{ href: ulmart_sessions_path }= 'Сессии'
--#         %a.dropdown-item{ href: ulmart_worked_categories_path }= 'График обработки категорий'
--#     %li.nav-item.dropdown
--#       %a.nav-link.dropdown-toggle{"data-toggle" => "dropdown", role: "button", "aria-haspopup" => "true", "aria-expanded" => "false" }= 'Mvideo'
--#       .dropdown-menu{ "aria-labelledby" => "Preview" }
--#         %a.dropdown-item{ href: mvideo_categories_path }= 'Категории'
--#         %a.dropdown-item{ href: mvideo_goods_path }= 'Продукты'
--#         %a.dropdown-item{ href: mvideo_sessions_path }= 'Сессии'
--#     %li.nav-item.dropdown
--#       %a.nav-link.dropdown-toggle{"data-toggle" => "dropdown", role: "button", "aria-haspopup" => "true", "aria-expanded" => "false" }= 'Эльдорадо'
--#       .dropdown-menu{ "aria-labelledby" => "Preview" }
--#         %a.dropdown-item{ href: eldorado_categories_path }= 'Категории'
--#         %a.dropdown-item{ href: eldorado_goods_path }= 'Продукты'
--#         %a.dropdown-item{ href: eldorado_sessions_path }= 'Сессии'
--#
--#     %li.nav-item= link_to "30", current_url(per_page: 30), class: 'nav-link'
--#     %li.nav-item= link_to "50", current_url(per_page: 50), class: 'nav-link'
--#     %li.nav-item= link_to "100", current_url(per_page: 100), class: 'nav-link'
--#
--#
+/ %nav.navbar.navbar-toggleable-md.navbar-ligh.bg-faded
+/   %button.navbar-toggler.navbar-toggler-right{ type: 'button', 'data-toggle' => 'collapse', 'data-target' => '#navbarNavDropdown', 'aria-controls' => 'navbarNavDropdown', 'aria-expanded' => "false", 'aria-label' => "Toggle navigation" }
+/     %span.navbar-toggler-icon
 
-%nav.navbar.navbar-toggleable-md.navbar-ligh.bg-faded
-  %button.navbar-toggler.navbar-toggler-right{ type: 'button', 'data-toggle' => 'collapse', 'data-target' => '#navbarNavDropdown', 'aria-controls' => 'navbarNavDropdown', 'aria-expanded' => "false", 'aria-label' => "Toggle navigation" }
-    %span.navbar-toggler-icon
+/   %a.navbar-brand{ href: '#' } Grabbers/Питер
+/   .collapse.navbar-collapse#navbarNavDropdown
+/     %ul.navbar-nav
+/       %li.nav-item.dropdown
+/         %a.nav-link.dropdown-toggle{"data-toggle" => "dropdown", role: "button", "aria-haspopup" => "true", "aria-expanded" => "false" }= 'Ulmart'
+/         .dropdown-menu{ "aria-labelledby" => "navbarDropdownMenuLink" }
+/           %a.dropdown-item{ href: ulmart_categories_path }= 'Категории'
+/           %a.dropdown-item{ href: ulmart_goods_path }= 'Продукты'
+/           %a.dropdown-item{ href: ulmart_proxies_path }= 'Прокси'
+/           %a.dropdown-item{ href: ulmart_sessions_path }= 'Сессии'
+/           %a.dropdown-item{ href: ulmart_worked_categories_path }= 'График обработки категорий'
 
-  %a.navbar-brand{ href: '#' } Grabbers/Питер
-  .collapse.navbar-collapse#navbarNavDropdown
-    %ul.navbar-nav
-      %li.nav-item.dropdown
-        %a.nav-link.dropdown-toggle{"data-toggle" => "dropdown", role: "button", "aria-haspopup" => "true", "aria-expanded" => "false" }= 'Ulmart'
-        .dropdown-menu{ "aria-labelledby" => "navbarDropdownMenuLink" }
-          %a.dropdown-item{ href: ulmart_categories_path }= 'Категории'
-          %a.dropdown-item{ href: ulmart_goods_path }= 'Продукты'
-          %a.dropdown-item{ href: ulmart_proxies_path }= 'Прокси'
-          %a.dropdown-item{ href: ulmart_sessions_path }= 'Сессии'
-          %a.dropdown-item{ href: ulmart_worked_categories_path }= 'График обработки категорий'
+/       %li.nav-item.dropdown
+/         %a.nav-link.dropdown-toggle{"data-toggle" => "dropdown", role: "button", "aria-haspopup" => "true", "aria-expanded" => "false" }= 'Mvideo'
+/         .dropdown-menu{ "aria-labelledby" => "navbarDropdownMenuLink" }
+/           %a.dropdown-item{ href: mvideo_categories_path }= 'Категории'
+/           %a.dropdown-item{ href: mvideo_goods_path }= 'Продукты'
+/           %a.dropdown-item{ href: mvideo_sessions_path }= 'Сессии'
+/       %li.nav-item.dropdown
+/         %a.nav-link.dropdown-toggle{"data-toggle" => "dropdown", role: "button", "aria-haspopup" => "true", "aria-expanded" => "false" }= 'Эльдорадо'
+/         .dropdown-menu{ "aria-labelledby" => "navbarDropdownMenuLink" }
+/           %a.dropdown-item{ href: eldorado_categories_path }= 'Категории'
+/           %a.dropdown-item{ href: eldorado_goods_path }= 'Продукты'
+/           %a.dropdown-item{ href: eldorado_sessions_path }= 'Сессии'
 
-      %li.nav-item.dropdown
-        %a.nav-link.dropdown-toggle{"data-toggle" => "dropdown", role: "button", "aria-haspopup" => "true", "aria-expanded" => "false" }= 'Mvideo'
-        .dropdown-menu{ "aria-labelledby" => "navbarDropdownMenuLink" }
-          %a.dropdown-item{ href: mvideo_categories_path }= 'Категории'
-          %a.dropdown-item{ href: mvideo_goods_path }= 'Продукты'
-          %a.dropdown-item{ href: mvideo_sessions_path }= 'Сессии'
-      %li.nav-item.dropdown
-        %a.nav-link.dropdown-toggle{"data-toggle" => "dropdown", role: "button", "aria-haspopup" => "true", "aria-expanded" => "false" }= 'Эльдорадо'
-        .dropdown-menu{ "aria-labelledby" => "navbarDropdownMenuLink" }
-          %a.dropdown-item{ href: eldorado_categories_path }= 'Категории'
-          %a.dropdown-item{ href: eldorado_goods_path }= 'Продукты'
-          %a.dropdown-item{ href: eldorado_sessions_path }= 'Сессии'
-
-      %li.nav-item= link_to "30", current_url(per_page: 30), class: 'nav-link'
-      %li.nav-item= link_to "50", current_url(per_page: 50), class: 'nav-link'
-      %li.nav-item= link_to "100", current_url(per_page: 100), class: 'nav-link'
+/       %li.nav-item= link_to "30", current_url(per_page: 30), class: 'nav-link'
+/       %li.nav-item= link_to "50", current_url(per_page: 50), class: 'nav-link'
+/       %li.nav-item= link_to "100", current_url(per_page: 100), class: 'nav-link'
