@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+%html
+  %head
+    %title= "Localization"
+    = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload'
+    = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
+    = csrf_meta_tags
+  %body
+    .container
+      - if user_signed_in?
+        = render partial: "shared/top_header"
+
+      .row.top-padding
+        = render partial: "shared/flash_messages", flash: flash
+        %br/
+        = yield
+        %br/
+        %br/
+        %br/
+
+    = yield :footer_js
+
