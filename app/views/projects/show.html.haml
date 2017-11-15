@@ -1,0 +1,28 @@
+%h2= 'Import words'
+%br/
+%br/
+
+.row
+  = form_for :project, url: import_project_path(@project), html: {method: :post} do |f|
+    .form-group
+      =f.label :content
+      = f.file_field :locales
+    .form-group
+      %button.btn.btn-info{ type: 'submit' } Submit
+
+%h2= 'Add language'
+%br/
+%br/
+.row
+  = form_for :project_languages, url: add_language_project_path(@project), html: {method: :post} do |f|
+    .form-group
+      = f.label :add_language
+    .form-group
+      = f.select(:language_id, Language.all.collect {|p| [ p.name, p.id ] })
+    .form-group
+      %button.btn.btn-info{ type: 'submit' } Submit
+
+%br/
+%br/
+.row
+  = link_to 'Back', projects_path, class: 'btn btn-primary'

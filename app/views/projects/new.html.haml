@@ -1,0 +1,18 @@
+%h2= 'Add new project'
+
+%br/
+.row
+  = form_for :project, url: projects_path, class: 'form' do |f|
+    .form-group
+      = f.label :name
+      = f.text_field :name
+    .form-group
+      = f.select(:default_language_id, Language.all.collect {|p| [ p.name, p.id ] })
+
+    %button.btn.btn-info{ type: 'submit' } Submit
+
+
+%br/
+%br/
+.row
+  = link_to 'Back', projects_path, class: 'btn btn-primary'
